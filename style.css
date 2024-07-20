@@ -1,0 +1,731 @@
+* {
+	box-sizing: border-box;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+body {
+	margin: 0;
+	font-family: 'Montserrat', sans-serif;
+	background: #dfdbe5;
+	background: url(картинки/фон.jpg);
+	background-size: cover;
+	background-attachment: fixed;
+}
+.container {
+	padding: 0 17%;
+	box-sizing: border-box;
+}
+.main-header {
+	background: rgb(48,99,180);
+	height: 40px;
+	width: 100%;
+	position: sticky;
+	top: 0;
+	z-index: 2;
+}
+.flex {
+	display: flex;
+}
+.hide {
+	display: none!important;
+}
+ul {
+	list-style: none;
+	padding: 0;
+	font-size: .95em;
+}
+.main-header .intro {
+	background: rgb(55,111,200);
+	width: 100%;
+	height: 40px;
+	padding: 3px 10px;
+	display: flex;
+	justify-content: space-between;
+}
+.main-header .intro .icons {
+	display: flex;
+	font-size: 1.25em;
+	color: #d7d6d6;
+    margin: 5px 10px 0 0;
+}
+.main-header .intro .icons li {
+	margin-left: 15px;
+}
+main {
+	height: auto;
+}
+main .intro {
+	height: auto;
+	width: 100%;
+	background: rgba(255,255,255,.5);
+	padding: 0;
+	border-bottom: 50px solid rgba(255,255,255,.8);
+}
+.main-header .logo {
+	background: url(https://sun1-94.userapi.com/impg/4RoVzkOAloduJi0QiL1IbEiu1uz98EgjU4tNhA/QFH8hd8np_g.jpg?size=371x341&quality=95&sign=2b4991af9428026e4fcaefdd7d3bcaac&c_uniq_tag=uJSDeoSI9csFlLSXILGC71r8fyp-kfdbFo_tkaT5qWM&type=album);
+	height: 32px;
+	width:32px;
+	background-size: cover;
+	border-radius: 50%;
+}
+.main-header .cite-title h3 {
+	margin: 7px 5px;
+	font-size: .95em;
+	color: white;
+	font-weight: 500;
+}
+.search-block {
+	position: relative;
+	display: flex;
+	padding: 30px 0 20px 1.5%;
+	background: rgba(255,255,255,.8);
+}
+.search-block label {
+	margin-top: 5px;
+	font-size: .8em;
+}
+.search-block input {
+	border: 1px solid rgba(0,0,0,.1);
+	background: transparent;
+	width: 30%;
+	height: 25px;
+	border-radius: 0px;
+	padding: 5px;
+	z-index: 0;
+	margin: 0 3px 0 10px;
+}
+.search-block input:hover {
+	cursor: pointer; 
+}
+.search-block input:focus {
+	outline: 0;
+	border: 1px solid black;
+}
+.search-block .btn {
+	border: 1px solid rgba(0,0,0,.1);
+	padding: 4px 6px;
+	font-size: 1em;
+}
+.main-cols {
+	display: flex;
+}
+.col-1 {
+	width: 70%;
+	padding-right: 0;
+}
+.col-2 {
+	padding: 0px 3% 0 2%;
+	background: rgba(255,255,255,.8);
+	width: 30%;
+}
+.themes-list {
+	border-radius: 4px;
+	margin-bottom: 10px;
+}
+.themes-list header {
+	font-weight: 500;
+	font-size: .95em;
+	border-radius: 4px 4px 0 0;
+}
+.themes-list .into {
+	font-size: .9em;
+}
+.themes-list .into ul li {
+	margin-bottom: 6px;
+	padding-bottom: 6px;
+	border-bottom: 1px solid rgba(0,0,0,.05);
+}
+.note-list {
+	justify-content:space-between;
+}
+.note {
+	width: 100%;
+	padding: 5px 0 45px 10px;
+	border: 1px solid transparent;
+	height: 175px;
+	overflow: hidden;
+	background: rgba(255,255,255,.8);
+}
+.note:hover {
+	border-top: 1px solid rgb(48,99,180,.4);
+	border-left: 1px solid rgb(48,99,180,.4);
+	border-right: 1px solid rgb(98,204,254,.2);
+	border-bottom: 1px solid rgb(98,204,254,.2);
+	background: 0;
+}
+.note img {
+	width: 100%;
+	height: auto;
+	width: 45%;
+	margin-right: 20px;
+	float: left;
+	height: 160px;
+	object-fit: cover;
+}
+.note h3 {
+	font-size: .95em;
+	margin: 0;
+	padding: 5px 10px 0 10px;
+}
+.note p {
+	font-size: .8em;
+	margin: 0;
+	padding: 10px 10px;
+	line-height: 1.4em;
+	text-align: left;
+}
+.article-intro {
+	padding: 0px 30px 30px 30px!important;
+	background: rgba(255,255,255,.9) !important;
+	border-bottom: 0 !important;
+	margin-bottom: 80px;
+}
+.article-header {
+	border-top: 0px solid #dfdbe5;
+	border-bottom: 1px solid #dfdbe5;
+	padding: 0;
+    height: 190px;
+	overflow: hidden;
+	font-size: 1.3em;
+	width: 100%;
+}
+.article-header .article-title .category {
+	font-size: .8em;
+}
+.article-title {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.article-btns {
+	display: flex;
+	position: absolute;
+	bottom: 0;
+	z-index: 0;
+	width: 43%;
+}
+.article-btn {
+	border: 1px solid #dfdbe5;
+	border-bottom: 0;
+	font-size: .65em;
+	padding: 5px 8px;
+	display: inline-block;
+	color: #3f3f3f;
+	cursor: pointer;
+	width: 50%;
+}
+.article-btn i {
+	font-size: 1.1em;
+	margin-right: 3px;
+}
+.article-btn:hover {
+	background: linear-gradient(to left, #ffff1c, rgba(120, 219, 226, 0.85));
+}
+.article-btn-first:hover {
+	background: rgba(120, 219, 226, 0.85);
+	border-right: 0;
+}
+.span-list {
+	font-size: .8em;
+    margin: 20px 0;
+    color: #3f3f3f;
+    position: absolute;
+    bottom: 20px;
+    display: block;
+}
+.article-header .article-title {
+	padding: 10px 0px;
+}
+.article-header .article-title h2 {
+	font-family: 'Philosopher', sans-serif;
+	font-size: 1.4em;
+	margin: 10px 0 30px 0;
+	color: #3f3f3f;
+}
+.header-illustration {
+	background: url(https://sun9-14.userapi.com/impg/Z7AiH1So3G8w6H05YVlsb-YaEpj6mHO1t2Zsmw/oC74PM3CnUs.jpg?size=1280x1171&quality=95&sign=6d35373feafd61f13c693676ff76b859&type=album);
+	background-color: #000;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-clip-path: polygon(25% 0,100% 0,100% 100%,0 100%);
+    clip-path: polygon(25% 0,100% 0,100% 100%,0 100%);
+    display: block;
+    height: 100%;
+    width: 60%;
+	float: right;
+	position: relative;
+	z-index: 1;
+}
+.article-content {
+	padding: 20px 0% 30px 0%;
+	text-align: left;
+	line-height: 1.5em;
+	font-size: .85em;
+}
+.article-content .illustration-img {
+	width: 40%;
+	margin: 20px 30px;
+}
+.article-content .illustration-img img {
+	width: 100%;
+}
+.article-content .illustration-img p {
+	font-size: .9em;
+	margin: 5px 0;
+}
+.article-content .float-right {
+	float: right;
+	margin-right: 0;
+}
+.article-content .float-left {
+	float: left;
+	margin-left: 0;
+}
+.article-comments h3 {
+	font-weight: 400;
+	font-size: .95em;
+	margin-bottom: 20px;
+}
+.article-comments {
+	
+}
+.comment-textarea textarea {
+	border: 1px solid #d1d1d1;
+	width: 100%;
+	height: 60px;
+	border-radius: 2px;
+	padding: 10px;
+	font-size: .85em;
+	margin-bottom: 10px;
+	background: rgb(48,99,180,.5); 
+	font-family: inherit;
+	color: white;
+}
+.comment-textarea textarea:focus {
+	background: transparent;
+	outline: 0;
+	color: #3f3f3f;
+}
+.comment-textarea textarea:hover {
+	background: linear-gradient(to left, #ffff1c, rgba(120, 219, 226, 0.85));
+}
+.super-btn {
+	border: 1px solid #d1d1d1;
+	font-size: .8em;
+	padding: 5px 6px;
+	display: inline-block;
+	color: #3f3f3f;
+	cursor: pointer;
+	border-radius: 2px;
+	user-select: none;
+}
+.super-btn:hover {
+	color: black;
+	border: 1px solid black;
+}
+.article-comments .super-btn {
+	float: right;
+}
+.comment-list {
+	padding: 40px 0;
+}
+.comment {
+	margin: 10px 0;
+}
+.comment .avatar{
+	float: left;
+	height: 32px;
+	width: 32px;
+	margin-right: 10px;
+	border-radius: 50%;
+	display: none;
+}
+.comment .title {
+	display: flex;
+	padding-top: 10px;
+}
+.comment .title h3 {
+	color: black;
+	font-weight: 500;
+	margin: 0;
+	font-size: .8em;
+	margin-right: 8px;
+}
+.comment .title .datetime {
+	font-size: .75em;
+}
+.comment p {
+	font-size: .85em;
+}
+.about-header {
+	height: 380px;
+	padding: 30px 5% 0 3%;
+	position: relative;
+}
+.about-header .motya {
+	height: 100%;
+	position: absolute;
+	left: 3%;
+	top: 30px;
+	z-index: 0;
+	height: 350px;
+}
+.about-header h1 {
+	font-size: 3.8em;
+	z-index: 1;
+	margin-top: 0px;
+	margin-left: 29%;
+	color: white;
+	position: relative;
+	font-family: 'Philosopher', sans-serif;
+	background: -webkit-linear-gradient(45deg, #09009f, #00ff95 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.about-header p {
+	z-index: 1;
+	margin-top: 0px;
+	margin-left: 35%;
+	position: relative;
+}
+.about-content {
+	padding: 0px 3% 30px 3%;
+}
+.about-content .author {
+	float: right;
+	height: 180px;
+	margin-left: 20px;
+}
+.about-intro {
+	background: #dfdbe5;
+	margin: 0;
+	display: block;
+	padding: 0;
+	margin-bottom: 30px;
+}
+.about-intro p {
+	font-size: .9em;
+	text-align: justify;
+}
+.about-cover {
+	background: url(https://sun9-78.userapi.com/impg/lfFL_vhd6C04fzHKbhLyBk0bQDMeODW2Gd28tw/m3rXB7V2UyU.jpg?size=1280x674&quality=95&sign=2e655a1b82f26ab95283507c8eb38278&c_uniq_tag=HmMfVoCfD7E-koYJCfWGIq4E_fC-QpRz-oxVJnmS7xM&type=album);
+	width: 100%;
+	height: 350px;
+	background-size: cover;
+	position: relative;
+}
+.mail-form {
+	margin: 0;
+}
+.mail-form h3 {
+	margin: 0;
+	padding: 30px 0 10px 0;
+    color: #e43a88;
+    font-size: 2em;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+.mail-form .inputWrapper {
+	margin: 15px 0;
+	display: flex;
+}
+.mail-form .inputWrapper label {
+	font-size: .85em;
+	user-select: none;
+	width: 15%;
+}
+.mail-form .inputWrapper input {
+	background: transparent;
+	border: 1px solid rgba(0,0,0,.3);
+	width: 50%;
+	padding: 3px 5px;
+	border-radius: 2px;
+}
+.mail-form .inputWrapper textarea {
+	width: 50%;
+	background: transparent;
+	border-radius: 2px;
+	padding: 3px 5px;
+	border: 1px solid rgba(0,0,0,.3);
+	font-family: inherit;
+	min-height: 120px;
+}
+.mail-form .super-btn {
+	margin-left: 15%;
+	width: 50%;
+}
+
+
+/** статья о методе Монте-Карло **/
+.calculator {
+	width: 100%;
+	height: auto;
+	border: 1px solid #d1d1d1;
+	border-radius: 2px;
+	margin-top: 20px;
+	font-size: 1.1em;
+}
+.calculator header {
+	background: transparent;
+	border-bottom: 1px solid #d1d1d1;
+	padding: 5px 10px;
+}
+.calculator header h3 {
+	font-weight: 400;
+	margin: 0;
+	font-size: .9em;
+}
+.calculator header ul {
+	display: flex;
+	margin: 5px 0 0 0;
+	font-size: .9em;
+}
+.calculator header ul li {
+	margin-right: 5px;
+	cursor: pointer;
+}
+.calculator header ul .active {
+	text-decoration: underline;
+}
+.calculator main {
+	padding: 5px 10px;
+	font-size: .9em;
+}
+.flex {
+	display: flex;
+}
+.calculator .col {
+	width: 30%;
+}
+.calculator .col:first-child {
+	width: 70%;
+	padding-right: 5%;
+}
+.calculator main p {
+	line-height: 1.2em;
+	margin-bottom: 30px;
+}
+.calculator main p b {
+	font-weight: 500;
+}
+.calculator .form-wrapper {
+	margin-bottom: 10px;
+	display: flex;
+	position: relative;
+}
+.calculator .form-wrapper label {
+	width: 14%;
+	display: block;
+}
+.calculator .form-wrapper input {
+	color: #FF7E93;
+	width: 40%;
+	border: 1px solid #FF7E93;
+}
+.calculator .form-wrapper input::-webkit-outer-spin-button,
+.calculator .form-wrapper input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.calculator .form-wrapper input:focus {
+	outline: 0;
+}
+.calculator .code pre {
+	margin: 0;
+	font-family: inherit;
+	padding: 0;
+}
+.calculator .text-btn {
+	margin-left: 3%;
+	padding: 2px 0;
+	border: 0;
+	border-bottom: 2px solid #FF7E93;
+	color: #FF7E93;
+	display: inline-block;
+	font-size: 1.1em;
+	font-weight: 500;
+	cursor: pointer;
+	user-select: none;
+}
+.calculator .res {
+	display: block;
+	margin: 10px 0;
+	color: #8f8e8a;
+	text-align: left;
+	margin-top: 10px;
+	font-weight: 500;
+}
+.calculator .res #result {
+	font-size: 1.5em;
+}
+.calculator .res #sigma {
+	font-size: 1.3em;
+	display: block;
+	padding: 0 0 10px 0;
+}
+.calculator .res #sigmanum {
+	font-size: .9em;
+}
+.calculator .res #accessresult {
+	display: block;
+}
+.mmc-app {
+	position: relative;
+	width: 200px;
+	background: rgb(248,241,186,.3);
+}
+#graph_field {
+	position: relative;
+	border-radius: 4px 4px 0 0;
+	border: 1px solid #d1d1d1;
+}
+.mmc-app #range_input {
+	position: absolute;
+	bottom: -10px;
+	width: 200px;
+	left: -2px;
+	-webkit-appearance: none !important;
+    height:10px;
+	background: transparent;
+	border-radius: 0 0 4px 4px;
+	border: 1px solid #d1d1d1;
+	background: rgba(255,255,255,.5);
+}
+.mmc-app .ab {
+	position: absolute;
+	bottom: -40px;
+	width: 200px;
+	display: flex;
+	justify-content: space-between;
+}
+.mmc-app .concentration {
+	position: absolute;
+	top: -2px;
+	width: 10px;
+	left: -10px;
+	margin: 0;
+	padding: 0;
+	font-size: .8em;
+}
+.mmc-app .concentration li{
+	margin: -2px 0 0 0;
+	height: 30px;
+	padding: 0;
+}
+.mmc-app input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    background: #FF7E93;
+    height:10px;
+    width:7px;
+	cursor: pointer;
+	border-radius: 2px;
+}
+#plustenbtn {
+	margin-left: 1px;
+	color: #FF7E93;
+	border: 0;    
+	background: transparent;
+    display: block;
+    margin-left: -50px;
+	border-left: 1px solid #FF7E93;
+	cursor: pointer;
+	outline: 0;
+}
+.calculator .code-block {
+	width: 100%;
+	height: 60vh;
+	border-radius: 2px;
+	padding: 0;
+}
+.calculator .code-block .imgs {
+	display: flex;
+	justify-content: space-between;
+}
+.calculator .code-block .img {
+	width: 50%;
+	text-align: center;
+	padding: 10px 0;
+	cursor: pointer;
+	border: 2px solid #d1d1d1;
+}
+.calculator .code-block .active {
+	border: 2px solid rgb(228,180,154);
+}
+.calculator .code-block .active:hover {
+	border: 2px solid rgb(228,180,154)!important;
+}
+.calculator .code-block .img:hover {
+	border: 2px solid rgb(225,181,157,.6);
+}
+.calculator .code-block img {
+	height: 45px;
+	width: auto;
+	user-select: none;
+}
+.calculator .code-block pre {
+	font-family: inherit;
+	padding: 5px 0;
+	height: 270px;
+	overflow-y: auto;
+	margin: 0;
+}
+.calculator .code-block h3 {
+	margin: 5px 0;
+	font-weight: 500;
+	font-size: 1em;
+}
+.calculator .consolelogblock {
+	height: 60vh;
+	border: 1px solid #d1d1d1;
+	border-radius: 2px;
+	padding: 5px 5px;
+	margin-top: 50px;
+	position: relative;
+	width: 200px;
+	background: rgb(248,241,186,.3);
+	overflow-y: auto;
+	overflow-x: hidden;
+	font-size: .9em;
+	word-wrap: break-word;
+}
+.calculator .consolelogblock ul {
+	padding: 0;
+	list-style: none;
+	margin: 0;
+}
+.calculator .consolelogblock ul li {
+	padding: 3px 0;
+}
+.calculator .consolelogblock .header-li {
+	position: sticky;
+	top: -5px;
+	padding: 2px 3px;
+	background: #8f8e8a4d;
+	width: 100%;
+}
+.calculator form {
+	position: relative;
+}
+.chio {
+	height: 100px;
+	width: 100px;
+	right: 20px;
+	top: -15px;
+	border: 3px solid rgb(228,180,154);
+	position: absolute;
+	background: url(https://sun9-59.userapi.com/impg/3dgm3GdlEPPJE-JFlHtxA__KPqfgu8T0qgdykA/YN9qMiGL1js.jpg?size=809x638&quality=95&sign=7b444564cb854abf0b2fae20ea913a8a&c_uniq_tag=ZGUDe1xDAZQhtVzPwcuet-u6vkcJR1sCYxranT2_zLQ&type=album);
+	background-size: cover;
+}
+.process-chio {
+	border: 3px solid rgb(59,181,246);
+	background: url(https://media.tenor.com/E3v4j9VZuSwAAAAi/cute-cat-cat-typing.gif);
+	background-size: cover;
+}
+.active-chio {
+	border: 3px solid rgb(145,226,112);
+	background: url(https://sun9-25.userapi.com/impg/IfbFeUcB4SIERdtQQbMBzsXBY5CR606Qxp_h4Q/HDo08xYIkEw.jpg?size=357x332&quality=95&sign=726e636971a5a0c2a7904f1ff4c2f3e3&c_uniq_tag=HBGTqucVyqOGYPyV2iHhytG0PV95588jijNpF6cOlz4&type=album);
+	background-size: cover;
+}

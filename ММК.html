@@ -1,0 +1,329 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+ 
+  <title>Блог</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Philosopher:wght@700&family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<main class="container">
+		<div class="intro article-intro">
+			<div class="article-header">
+				<div class="header-illustration" style="background: url(https://sun9-6.userapi.com/impg/bMNqKHNzljtyYZcoqVA3G6oXJRYbzWpa2LqyDg/MdJBK8i2sIw.jpg?size=497x297&quality=96&sign=04a28b128c586c28b7586c078fc80350&type=album);"></div>
+				<div class="article-title">
+					<h2>Вычисление молока методом Монте-Карло</h2>
+				</div>
+			</div>
+			<div class="article-content">
+				<p>
+					Интеграл простыми словами – это площадь криволинейной фигуры. Интеграл — одно из важнейших понятий математического анализа, которое возникает при решении задач о нахождении площади под кривой, пройденного пути при неравномерном движении, массы неоднородного тела, и т. п., а также в задаче о восстановлении функции по её производной (неопределённый интеграл). Упрощённо интеграл можно представить как аналог суммы для бесконечного числа бесконечно малых слагаемых. 
+				</p>
+				<p>
+					Методы Монте-Карло - класс вычислительных методов, основанных на получении большого числа реализаций случайного процесса, который формируется таким образом, чтобы его вероятностные характеристики совпадали с аналогичными величинами решаемой задачи.
+					Часто используются при моделировании физических и математических систем. Из-за их зависимости от повторяющихся вычислений и случайных или псевдослучайных чисел методы Монте-Карло наиболее подходят для вычислений с помощью компьютера.
+					Используются, когда невозможно вычислить точный результат с помощью детерминированного алгоритма.
+				</p>
+				<p>
+					Алгоритмы работают на основе закона больших чисел, который гласит, что если происходит генерация большого количество выборок, в конечном итоге получается приблизительное желаемое распределение.
+					Дисперсия, то есть величина, показывающая как именно и насколько сильно разбросаны значения, а вместе с ней и оценка точности, зависит от того, какую случайную величину взять для проведения расчетов.
+				<p>
+				<p>
+					Методы Монте-Карло имеют три характеристики:
+					<ul>
+						<li>* Генерация случайной выборки</li>
+						<li>* Распределение входных данных известно</li>
+						<li>* Численные эксперименты</li>
+					</ul>
+				</p>
+				<p>
+					Распределение вероятностей определяет либо вероятность каждого значения неидентифицированной случайной величины (когда переменная дискретна), либо вероятность того, что значение попадет в определенный интервал (когда переменная непрерывна).
+					Конкретно так происходят вычисления. Интервал [A, B] разбиваем на N одинаковых интервалов, в серединах которых вычислялись значения подынтегральной функции. Вычисляя значения функции в случайных узлах, можно получить более точный результат. Точность оценки зависит только от количества точек N.
+				</p>
+				<p>
+					Воспользуемся геометрическим значением интеграла. 
+					Для этого нужно взять область интегрирования [a, b], ограничить ее прямоугольником с площадью Spar и набросать в этот прямоугольник случайным образом точек. Затем требуется посчитать количество точек K попавших в область под графиком функции и вычислить интеграл (площадь под кривой S).
+					Интегральная кривая лежит в единичном квадрате, и если мы сумеем получать пары случайных чисел, равномерно распределенных на интервале [0, 1], то полученные значения можно интерпретировать как координаты точки в единичном квадрате. Тогда, если этих пар чисел получено достаточно много, можно приблизительно считать, что I=s/n. чем больше будет значение N, тем точнее окажется аппроксимация.
+					Еще точность можно повысить уменьшением ограничивающей площади, максимально приблизив ее к самой функции.
+					Если мы будем случайным образом «бросать» на плоскость точки (случайно выбирать координаты x и y), то чем больше площадь фигуры, тем больше на нее попадёт точек. Если при этом число «бросков» стремится к бесконечности, то отношение количества точек, попавших на две фигуры, будет стремиться к отношению площадей этих фигур.
+				</p>
+				<div class="calculator">
+					<header>
+						<h3>Вычисление интегралов методом Монте-Карло</h3>
+					</header>
+					<main>
+						<div class="flex">
+							<div class="col">
+							
+						<p><b>Задача:</b> Кошке налили молока из холодильника и разбавили горячей воды.
+						Блюдце имеет дно 5х5см и высоту 5см. Какова концентрация молока в блюдце на высоте (...)?
+						Концентрация молока вычисляем, предположим, по функции f(x)=5/(x-1)^2</p>
+								<form>
+									<div class="chio"></div>
+									<div class="form-wrapper">
+										<label>n точек = </label>
+										<input placeholder="?" id="n_value" type="number" min = "0" max = "1000000" onKeyUp="if(this.value>1000000){this.value='1000000';}else if(this.value<0){this.value='0';}" value="100" oninput="setn()">
+										<button id="plustenbtn" onClick="addtenten(event);">+1000</button>
+										<div class="text-btn" onclick="start()">Вперёд!</div>
+									</div>
+								</form>
+								
+								<div class="res" id="res">
+									<i class="el-icon-arrow-right"></i> <span id="result">result</span>
+									<span id="sigma">+- <span id="sigmanum"></span>0</span>
+									<span id="analiticalresult">Аналитический результат: <span id="analiticalresultnum"></span></span>
+									<span id="accessresult" class="hide">-> впервые достигнут с точностью до .01 на шаге n = <span id="accesn"></span></span>
+								</div>
+								<div class="code-block">
+									<div class="imgs">
+										<div class="img active" id="allint_formula" onClick="opencode('allint');">
+											<img src="./картинки/integralall.png" id="allint">
+										</div>
+										<div class="img" id="geometryint_formula" onClick="opencode('geometryint');">
+											<img src="./картинки/integralspar.png" id="geometryint">
+										</div>
+									</div>
+									<h3>Приблизительный код для javascript</h3>
+<pre id="geometryint_code" class="hide">
+let res = 0
+let n = ?
+let a = 0
+let b = ?
+let sigma = 0
+let f = (x) => 5/(Math.pow((x+1),2))
+for(i=0; i&lt;n; i++) {
+	if(y_set>f_set){
+		hits++
+	}
+}
+res = hits*b*5
+let average = res/n
+sigma += x
+let average_sigma = Math.sqrt(Math.abs(sigma)/n)
+return integral = average*(b-a)
+</pre>
+<pre id="allint_code">
+let sum = 0
+let n = ?
+let a = 0
+let b = ?
+let sigma = 0
+let f = (x) => 5/(Math.pow((x+1),2))
+for(i=0; i&lt;n; i++) {
+	sum+=f(x)
+	sigma += x
+}
+let average = res/n
+let average_sigma = Math.sqrt(Math.abs(sigma)/n)
+return integral = average*(b-a)
+</pre>
+								</div>
+							</div>
+							<div class="col">
+								<div class="mmc-app">
+									<ul class="concentration">
+										<li>5</li><li>4</li><li>3</li><li>2</li><li>1</li><li>0</li>
+									</ul>
+									<div id="graph_field">
+										<canvas width="200" height="150" id="graphik"></canvas>
+									</div>
+									<input type="range" min="0" max="5" id="range_input" value="5" oninput="setb()">
+									<ul class="ab"><li>a = <span id="a_val">0</span></li><li>b = <span id="b_val">5</span></li>
+									</ul>
+								</div>
+								<div class="consolelogblock">
+									<ul></ul>
+								</div>
+							</div>
+						</div>
+					</main>
+				</div>
+			</div>
+		</div>
+	</main>
+  <script src="js/scripts.js"></script>
+  <script>
+	let scale = 30
+	let pts = []
+	set_points()
+	let a = 0
+	let n = document.getElementById('n_value').value
+	let anres = (25/6).toFixed(5)
+	let gettrue = 0
+	let max_val = Number(document.getElementById('range_input').value)
+	document.getElementById('analiticalresultnum').innerHTML = (25/6).toFixed(5)
+	let consoleblock_ul = document.querySelector('.consolelogblock ul')
+	let method = 'allint'
+	function set_points(){
+		let a = 0
+			let y = x => 5/Math.pow((x+1),2)
+			let step = 1
+			let cnvs = document.querySelector('canvas')
+			
+			let ctx = cnvs.getContext('2d')					
+			ctx.lineWidth = 1.4;
+			for(let x = 0; x<=cnvs.width; x+=1) {
+				pts.push([x, cnvs.height - y(x/scale)*scale]);
+			}
+			polyline('#edbd57', pts);
+
+		function polyline(color, pts) {
+		  ctx.strokeStyle = color;
+		  ctx.beginPath();
+		  pts.forEach((p, i) => i ? ctx.lineTo(...p) : ctx.moveTo(...p));
+		  ctx.stroke();
+		}
+	}
+	
+	function defaultRandomIntFromInterval(min, max) {
+		 return Math.random() * (max - min + 1) + min
+	}
+	console.log(pts)
+	let count = 0
+	let res = 0
+	let sigma = 0
+	let hits = 0
+	function set_point(){
+		if(count<n){
+			if(document.querySelector('.chio').classList.contains('active-chio')){
+				document.querySelector('.chio').classList.remove('active-chio')
+			}
+			document.querySelector('.chio').classList.add('process-chio')
+			let b = max_val*40
+			let step = 1
+			let cnvs = document.querySelector('canvas')
+				
+			let ctx = cnvs.getContext('2d')					
+			ctx.lineWidth = 1.5
+					
+			let x = Math.floor(defaultRandomIntFromInterval(0,b))
+			let y = defaultRandomIntFromInterval(0,150)
+			let y_set = y/scale
+			let x_set = x/40
+			let f = x => 5/Math.pow((x+1),2)
+			let f_set = (cnvs.height - f(x/scale)*scale)/scale
+			let true_ans = 5/Math.pow((x_set+1),2)
+			let li = document.createElement('li')
+			li.style.listStyle = 'none'
+			li.style.lineHeight = '1.2em'
+			li.style.marginBottom = '5px'
+			consoleblock_ul.prepend(li)
+			ctx.beginPath()
+			ctx.moveTo(x, y)
+			ctx.lineTo(x+1, y+1)
+			let new_res = 0
+			count++
+			if(method=='allint'){
+				ctx.strokeStyle = '#8f8e89'
+				res+=true_ans
+				let average = res/count
+				new_res = max_val*average.toFixed(5)
+				li.innerHTML = (count)+'-й шаг: y = '+(y_set).toFixed(3)+' и x = '+(x_set).toFixed(3)+'. f(x) = '+(f_set).toFixed(3)+'.'
+			} else {
+				if(y_set>f_set){
+					ctx.strokeStyle = '#edbd57'
+					hits++
+					li.innerHTML = (count)+'-й шаг: y = '+y_set+' и x = '+x_set+'.Результат по точкам для этого x:'+f_set+'. Точка попала под прямую.'
+				} else {
+					ctx.strokeStyle = '#8f8e89'
+					li.innerHTML = (count)+'-й шаг: y = '+y_set+' и x = '+x_set+'.Результат по точкам для этого x:'+f_set+'. Точка НЕ попала под прямую.'
+				}
+				res = hits*max_val*5
+				new_res = 1.165*res/count
+			}
+			sigma += x_set
+			let average_sigma = Math.sqrt(Math.abs(sigma)/count)
+			ctx.stroke()
+			let difference = diff(anres,new_res)
+			if(difference<.01&&gettrue==0) {
+				gettrue = 1
+				document.getElementById('accessresult').classList.remove('hide')
+				document.getElementById('accesn').innerHTML = count
+			}
+			document.getElementById('result').innerHTML = new_res
+			document.getElementById('sigmanum').innerHTML = average_sigma.toFixed(5)
+		} else {
+			document.querySelector('.chio').classList.add('active-chio')
+		}
+	}
+	function diff (num1, num2) {
+	  if (num1 > num2) {
+		return num1 - num2
+	  } else {
+		return num2 - num1
+	  }
+	}
+	function start(){
+		clear_programm()
+		setInterval(set_point,5)
+	}
+	function setb(){
+		let b = document.getElementById('range_input').value
+		document.getElementById('b_val').innerHTML = b
+		max_val = Number(document.getElementById('range_input').value)
+		if(max_val==0) {
+			document.getElementById('analiticalresultnum').innerHTML = "0"
+			anres = 0
+		} else if(max_val==1) {
+			document.getElementById('analiticalresultnum').innerHTML = (5/2).toFixed(5)
+			anres = (5/2).toFixed(5)
+		} else if(max_val==2) {
+			document.getElementById('analiticalresultnum').innerHTML = (10/3).toFixed(5)
+			anres = (10/3).toFixed(5)
+		} else if(max_val==3) {
+			document.getElementById('analiticalresultnum').innerHTML = (15/4).toFixed(5)
+			anres = (15/4).toFixed(5)
+		} else if(max_val==4) {
+			document.getElementById('analiticalresultnum').innerHTML = 4
+			anres = 4
+		} else if(max_val==5) {
+			document.getElementById('analiticalresultnum').innerHTML = (25/6).toFixed(5)
+			anres = (25/6).toFixed(5)
+		}
+		start()
+	}
+	function setn(){
+		document.getElementById('n_value').value
+	}
+	function addtenten(event){
+		event.preventDefault()
+		let n = Number(document.getElementById('n_value').value)
+		n = n+1000
+		document.getElementById('n_value').value = n
+	}
+	function opencode(type) {
+		if(method != type) {
+			document.getElementById(type+'_formula').classList.add('active')
+			document.getElementById(method+'_formula').classList.remove('active')
+			document.getElementById(type+'_code').classList.remove('hide')
+			document.getElementById(method+'_code').classList.add('hide')
+			method = type
+			start()
+		}
+	}
+	function clear_programm() {
+		cleargrapfik()
+		n = document.getElementById('n_value').value
+		count = 0
+		res = 0
+		sigma = 0
+		hits = 0
+		document.getElementById('accessresult').classList.add('hide')
+		document.getElementById('accesn').innerHTML = 0
+		document.getElementById('result').innerHTML = "result"
+		document.getElementById('sigmanum').innerHTML = ""
+	}
+	function cleargrapfik(){
+		pts = []
+		document.getElementById('graphik').remove()
+		document.getElementById('graph_field').innerHTML = "<canvas width='200' height='150' id='graphik'></canvas>"
+		set_points()
+	}
+  </script>
+</body>
+</html>
